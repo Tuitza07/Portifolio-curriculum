@@ -1,0 +1,264 @@
+:root{
+  --sidebar: #0f3a4b;   /* cor da coluna esquerda */
+  --accent: #2c6388;    /* cor dos títulos / blocos coloridos */
+  --color-blue: #0f394a87;
+  --text: #24303a;
+  --white: #ffffff;
+  --card-border-color: #2c638869;
+  --card-shadow: 0 10px 30px rgba(23,35,45,0.08);
+  --radius: 12px;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 28px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('dev-working.jpg');
+  background-size: cover;
+  z-index: -1;
+  filter: blur(5px);
+}
+
+/* Container principal: duas colunas */
+.resume{
+  max-width:1000px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:0;
+  background:var(--white);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--card-shadow);
+}
+
+/* ========== SIDEBAR (esquerda) ========== */
+.left{
+  background:linear-gradient(180deg, var(--sidebar), #103542);
+  color:var(--white);
+  padding:32px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+}
+
+.photo img{
+  width:148px;
+  height:148px;
+  border-radius:50%;
+  object-fit:cover;
+  border:6px solid rgba(255,255,255,0.12);
+  box-shadow:0 8px 20px rgba(0,0,0,0.18);
+}
+
+.full-name{
+  margin:8px 0 0;
+  font-size:20px;
+  font-weight:700;
+  text-align:center;
+}
+
+.role{
+  margin:6px 0 0;
+  font-size:13px;
+  color:rgba(255,255,255,0.9);
+  text-align:center;
+}
+
+/* divisores finos */
+.divider{
+  width:100%;
+  height:1px;
+  background:rgba(255,255,255,0.06);
+  margin:8px 0;
+}
+
+/* contatos */
+.contact{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.contact p{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  font-size:14px;
+  margin:0;
+  padding:8px 12px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.03);
+  border: 1px solid var(--card-border-color);
+}
+
+.contact i{
+  width:28px;
+  text-align:center;
+  font-size:16px;
+  color:var(--white);
+}
+
+/* links na sidebar */
+.contact a{
+  color:rgba(230,240,248,0.95);
+  text-decoration:none;
+  word-break:break-all;
+}
+.contact a:hover{ text-decoration:underline; }
+
+/* pequenos blocos na sidebar */
+.small-block {
+  width:100%;
+  font-size:13px;
+  background:rgba(255,255,255,0.02);
+  padding: 1.5rem;
+  border-radius:8px;
+  border: 1px solid var(--card-border-color);
+}
+
+.small-block h4 {
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+/* ========== CONTEÚDO (direita) ========== */
+.right{
+  padding:28px 32px;
+  /*
+
+  background-image: url('dev-working.jpg'); /* caminho da imagem */
+  background-size: cover;        /* cobre toda a área */
+  background-position: center;   /* centraliza a imagem */
+  background-repeat: no-repeat;  /* evita repetição */
+
+  /* camada branca translúcida para manter o texto legível */
+  background-color: rgba(255, 255, 255, 0.92);
+  background-blend-mode: lighten;
+}
+
+
+/* botão imprimir / pdf */
+.top-actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-bottom:12px;
+}
+
+.btn{
+  background:var(--accent);
+  color:var(--white);
+  border:none;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  box-shadow:0 8px 18px rgba(255,107,74,0.16);
+}
+.btn:hover{ transform:translateY(-2px); }
+
+/* seções — título com bloco colorido (estilo da sua foto) */
+.section{
+  margin-bottom:20px;
+}
+
+.section-title{
+  display:inline-block;
+  background:var(--accent);
+  color:var(--white);
+  padding:6px 12px;
+  border-radius:8px;
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+/* experiência / itens */
+.job{
+  margin-bottom:14px;
+  padding:12px;
+  border-radius:8px;
+  background:transparent;
+}
+.job h4{
+  margin:0 0 6px;
+  font-size:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.job p{ margin:0; color:#475b66; font-size:14px; line-height:1.45; }
+
+/* datas */
+.date{
+  font-size:12px;
+  color:#7b8b96;
+  margin-left:8px;
+  font-weight:600;
+}
+
+/* habilidades (barras) */
+.skill{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:10px 0;
+}
+
+.skill-name { width:160px; font-size:14px; color:#41545a; }
+
+.bar {
+  flex:1;
+  background:#e9eef1;
+  height:10px;
+  border-radius:99px;
+  overflow:hidden;
+}
+
+.bar span {
+  width: 0;
+  height: 100%;
+  display: block;
+  background: var(--accent);
+  border-radius: inherit;
+  transition: width 3s ease-in-out;
+}
+
+/* lista de cursos */
+.courses ul{ margin:6px 0 0 18px; padding:0; color:#4b5b62 }
+
+/* responsivo */
+@media (max-width:900px){
+  .resume{ grid-template-columns:1fr; }
+  .left{ flex-direction:row; align-items:center; padding:16px; gap:12px; }
+  .photo img{ width:88px; height:88px; border-width:4px; }
+  .full-name{ font-size:16px; text-align:left }
+  .role{ font-size:12px; text-align:left }
+  .contact{ order:3; width:100% }
+  .right{ padding:20px; }
+  .top-actions{ justify-content:flex-start; margin-bottom:8px }
+}
